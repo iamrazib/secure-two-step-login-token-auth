@@ -1,4 +1,3 @@
-# EmployeeMvcAuth
 # Secure Two-Step Login with Challenge ID and Session Token Authentication
 
 A simple ASP.NET Core MVC web application demonstrating a secure two-step employee login process using **Challenge ID**, **Session Token**, and database-level token validation.
