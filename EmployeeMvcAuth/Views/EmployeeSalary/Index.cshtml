@@ -1,0 +1,41 @@
+﻿@model EmployeeMvcAuth.Models.EmployeeSalaryViewModel
+
+<h2>Employee Salary</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4>@Model.FullName</h4>
+        <p>User ID: <strong>@Model.UserId</strong></p>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Basic Salary</th>
+                <td>@Model.BasicSalary.ToString("N2")</td>
+            </tr>
+            <tr>
+                <th>House Rent</th>
+                <td>@Model.HouseRent.ToString("N2")</td>
+            </tr>
+            <tr>
+                <th>Medical Allowance</th>
+                <td>@Model.MedicalAllowance.ToString("N2")</td>
+            </tr>
+            <tr>
+                <th>Bonus</th>
+                <td>@Model.Bonus.ToString("N2")</td>
+            </tr>
+            <tr>
+                <th>Total Salary</th>
+                <td><strong>@Model.TotalSalary.ToString("N2")</strong></td>
+            </tr>
+            <tr>
+                <th>Effective From</th>
+                <td>@Model.EffectiveFrom.ToString("dd-MMM-yyyy")</td>
+            </tr>
+        </table>
+
+        <a asp-controller="Dashboard" asp-action="Index" class="btn btn-secondary">
+            Back to Dashboard
+        </a>
+    </div>
+</div>

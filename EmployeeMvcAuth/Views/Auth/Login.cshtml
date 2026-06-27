@@ -1,0 +1,21 @@
+﻿@model EmployeeMvcAuth.Models.LoginUserIdViewModel
+
+<h2>Employee Login</h2>
+
+<form asp-action="Login" method="post">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label asp-for="UserId"></label>
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+</form>

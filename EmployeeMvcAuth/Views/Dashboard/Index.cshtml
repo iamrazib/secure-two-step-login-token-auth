@@ -1,0 +1,29 @@
+﻿@model EmployeeMvcAuth.Models.DashboardViewModel
+
+<h2>Employee Dashboard</h2>
+
+<p>Welcome, <strong>@Model.FullName</strong></p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>User ID</th>
+        <td>@Model.UserId</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+</table>
+
+<a asp-controller="EmployeeSalary" asp-action="Index" class="btn btn-primary">
+    View Salary
+</a> &nbsp;
+<a asp-controller="EmployeeLeaveDetails" asp-action="Index" class="btn btn-warning">
+    View Leave Details
+</a>
+<br />
+
+<form asp-controller="Auth" asp-action="Logout" method="post">
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Logout</button>
+</form>

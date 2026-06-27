@@ -1,0 +1,54 @@
+﻿@model EmployeeMvcAuth.Models.EmployeeLeaveDetailsViewModel
+
+<h2>Employee Leave Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4>@Model.FullName</h4>
+        <p>User ID: <strong>@Model.UserId</strong></p>
+
+        @if (!string.IsNullOrWhiteSpace(Model.Message))
+        {
+            <div class="alert alert-info">
+                @Model.Message
+            </div>
+        }
+
+        @if (Model.LeaveItems.Any())
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Leave Type</th>
+                        <th>Total Leave</th>
+                        <th>Used Leave</th>
+                        <th>Remaining Leave</th>
+                        <th>Leave Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.LeaveItems)
+                    {
+                        <tr>
+                            <td>@item.LeaveType</td>
+                            <td>@item.TotalLeave</td>
+                            <td>@item.UsedLeave</td>
+                            <td>@item.RemainingLeave</td>
+                            <td>@item.LeaveYear</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                No leave details are available for this employee.
+            </div>
+        }
+
+        <a asp-controller="Dashboard" asp-action="Index" class="btn btn-secondary">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
